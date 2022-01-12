@@ -5,7 +5,7 @@ def create_dict(*args):
             print(f"Cannot add {args[i]} to the dict!")
         elif type(args[i]) is tuple:
             for arg in args[i]:
-                if type(arg) is list:
+                if type(arg) in [list, set, dict]:
                     print(f"Cannot add {args[i]} to the dict!")
                     break
             else:
