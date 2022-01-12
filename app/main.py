@@ -11,7 +11,7 @@ def is_allowed_type(obj) -> bool:
 
 
     """
-    allowed_types = [int, float, bool, str, tuple, types.FunctionType]
+    allowed_types = [int, float, bool, str, tuple, types.FunctionType, type(None)]
     return any(isinstance(obj, i) for i in allowed_types)
 
 
@@ -19,8 +19,8 @@ def check_types(*args):
     """
 
     :param *args:
-    :return True if all of arguments and all contained data can be used as dict key,
-    False otherwise:
+    :return True if all of arguments and all contained data
+    can be used as dict key, False otherwise:
 
 
     """
@@ -44,8 +44,3 @@ def create_dict(*args):
             print(f"Cannot add {args[i]} to the dict!")
 
     return result
-
-
-
-
-
