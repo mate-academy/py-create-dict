@@ -3,7 +3,7 @@ def create_dict(*args):
     for index, element in enumerate(args):
         if isinstance(element, (list, set, dict)):
             print(f'Cannot add {element} to the dict!')
-        elif isinstance(element, (list, tuple, set, dict)):
+        elif isinstance(element, tuple):
             for j in element:
                 if isinstance(j, (list, dict, set)):
                     print(f'Cannot add {element} to the dict!')
