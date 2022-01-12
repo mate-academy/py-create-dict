@@ -72,31 +72,31 @@ def test_create_dict_with_function_argument():
 
 
 # @pytest.mark.parametrize(
-#     "args,expected_std_output,expected_result",
-#     [
-#         (
-#             ((1, (2, [3, 4])), 2),
-#             "Cannot add (1, (2, [3, 4])), 2) to the dict!\n",
-#             {}
-#         ),
-#         (
-#             (((1, 2), (3, 4), (5, (6, 7, 8, (9, "hello")))), "asdf"),
-#             "",
-#             {((1, 2), (3, 4), (5, (6, 7, 8, (9, "hello")))): 0, "asdf": 1}
-#         ),
-#         (
-#             (((1, 2), (3, 4), (5, (6, 7, 8, (9, [1])))), "asdf"),
-#             "Cannot add ((1, 2), (3, 4), (5, (6, 7, 8, (9, [1]])))) to the dict!",
-#             {"asdf": 1}
-#         )
-#     ]
-# )
+#      "args,expected_std_output,expected_result",
+#      [
+#          (
+#              ((1, (2, [3, 4])), 2),
+#              "Cannot add (1, (2, [3, 4])), 2) to the dict!\n",
+#              {}
+#          ),
+#          (
+#              (((1, 2), (3, 4), (5, (6, 7, 8, (9, "hello")))), "asdf"),
+#              "",
+#              {((1, 2), (3, 4), (5, (6, 7, 8, (9, "hello")))): 0, "asdf": 1}
+#          ),
+#          (
+#              (((1, 2), (3, 4), (5, (6, 7, 8, (9, [1])))), "asdf"),
+#              "Cannot add ((1, 2), (3, 4), (5, (6, 7, 8, (9, [1]])))) to the dict!",
+#              {"asdf": 1}
+#          )
+#      ]
+#  )
 # def test_create_dict_optional_task(args: tuple, expected_std_output: str, expected_result: dict):
-#     f = io.StringIO()
-#     with redirect_stdout(f):
-#         create_dict_result = create_dict(*args)
-#
-#     std_output = f.getvalue()
-#
-#     assert create_dict_result == expected_result
-#     assert std_output == expected_std_output
+#      f = io.StringIO()
+#      with redirect_stdout(f):
+#          create_dict_result = create_dict(*args)
+
+#      std_output = f.getvalue()
+
+#      assert create_dict_result == expected_result
+#      assert std_output == expected_std_output
