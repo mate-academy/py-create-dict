@@ -9,7 +9,8 @@ def create_dict(*args):
 
 
 def checker(element):
-    if isinstance(element, (str, float, int, bool)) or element is None or callable(element):
+    if isinstance(element, (str, float, int, bool)) \
+            or element is None or callable(element):
         return True
     elif isinstance(element, tuple):
         return all(checker(k) for k in element)
