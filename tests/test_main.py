@@ -44,6 +44,11 @@ from app.main import create_dict
             "Cannot add [] to the dict!\nCannot add {} to the dict!\n",
             {"asdf": 2}
         )
+        # (
+        #     ("a", (1, [2, 3]), "b"),
+        #     "Cannot add (1, [2, 3]) to the dict!\n",
+        #     {"a": 0, "b": 2}
+        # )
     ]
 )
 def test_create_dict(args: tuple, expected_std_output: str, expected_result: dict):
@@ -64,7 +69,6 @@ def test_create_dict_with_function_argument():
     f = io.StringIO()
     with redirect_stdout(f):
         create_dict_result = create_dict(func, 2)
-
     std_output = f.getvalue()
 
     assert create_dict_result == {func: 0, 2: 1}
