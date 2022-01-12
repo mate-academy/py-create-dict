@@ -41,6 +41,9 @@ print(create_dict(3, [1, 2], 5))
 # {3: 0, 5: 2}
 print(create_dict(3, (1, 2), 5))
 # {3: 0, (1, 2): 1, 5: 2}
+print(create_dict(3, (1, [2, 3]), 5))
+# Cannot add (1, [2, 3]) to the dict!
+# {3: 0, 5: 2}
 ```
 
 
