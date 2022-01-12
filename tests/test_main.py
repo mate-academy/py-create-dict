@@ -69,7 +69,6 @@ def test_create_dict_with_function_argument():
     f = io.StringIO()
     with redirect_stdout(f):
         create_dict_result = create_dict(func, 2)
-
     std_output = f.getvalue()
 
     assert create_dict_result == {func: 0, 2: 1}
