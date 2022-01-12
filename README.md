@@ -25,11 +25,12 @@ Hint: use `isinstance`.
 ### Required Task
 Create function `create_dict` if:
 
-Each collection type provided to the `create_dict` function is limited to nesting level = 1:
+For all arguments provided to `create_dict` we will have maximum nesting level = 2:
 
-- `[1, 2, [1, 2]]` - nesting level = 1, because list in list - ok.
-- `[1, 2, 3]` - nesting level = 0 - ok.
-- `[1, [2, [3, 4]]]` - nesting level = 2 - not ok, won't be passed such list in function.
+- `create_dict([1, 2, [1, 2]])` - nesting level = 2, because first parameter has list in list - ok.
+- `create_dict([1, 2, 3])` - nesting level = 1 - ok, because list is already has level 1.
+- `create_dict(1)` - nesting level = 0 - ok.
+- `create_dict([1, [2, [3, 4]]])` - nesting level = 3 - not ok, won't be passed such list in function.
 
 Examples:
 ```python
