@@ -4,7 +4,7 @@ def create_dict(*args):
     message = "Cannot add {} to the dict!"
 
     for i in args:
-        if (isinstance(i, (str, int, float, bool))) or callable(i):
+        if (isinstance(i, (str, int, float, bool))) or callable(i) or i is not None:
             result.update({i: data_dict})
         elif isinstance(i, tuple):
 
