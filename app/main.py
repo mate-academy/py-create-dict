@@ -1,7 +1,8 @@
 def create_dict(*args):
     res_dict = {}
     for counter, i in enumerate(args):
-        if isinstance(i, (int, str, float, bool)) or callable(i) or i is None or check(i):
+        if isinstance(i, (int, str, float, bool)) or callable(i)\
+                or i is None or check(i):
             res_dict.update({i: counter})
         else:
             print(f"Cannot add {i} to the dict!")
@@ -9,7 +10,8 @@ def create_dict(*args):
 
 
 def check(param):
-    if isinstance(param, (int, str, float, bool)) or callable(param) or param is None:
+    if isinstance(param, (int, str, float, bool))\
+            or callable(param) or param is None:
         return True
     if isinstance(param, tuple):
         return all(check(j) for j in param)
