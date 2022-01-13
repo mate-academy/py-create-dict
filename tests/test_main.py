@@ -10,24 +10,24 @@ from app.main import create_dict
     "args,expected_std_output,expected_result",
     [
         (
-            (7, 1, 3),
-            "",
-            {7: 0, 1: 1, 3: 2}
+                (7, 1, 3),
+                "",
+                {7: 0, 1: 1, 3: 2}
         ),
         (
-            (3, (1, 2), 5),
-            "",
-            {3: 0, (1, 2): 1, 5: 2}
+                (3, (1, 2), 5),
+                "",
+                {3: 0, (1, 2): 1, 5: 2}
         ),
         (
-            (3, [1, 2], 5),
-            "Cannot add [1, 2] to the dict!\n",
-            {3: 0, 5: 2}
+                (3, [1, 2], 5),
+                "Cannot add [1, 2] to the dict!\n",
+                {3: 0, 5: 2}
         ),
         (
-            (3, {1, 2}, 5),
-            "Cannot add {1, 2} to the dict!\n",
-            {3: 0, 5: 2}
+                (3, {1, 2}, 5),
+                "Cannot add {1, 2} to the dict!\n",
+                {3: 0, 5: 2}
         ),
         (
                 (3, {1: 1, 2: 2}, 5),
@@ -35,19 +35,19 @@ from app.main import create_dict
                 {3: 0, 5: 2}
         ),
         (
-            ({},),
-            "Cannot add {} to the dict!\n",
-            {}
+                ({},),
+                "Cannot add {} to the dict!\n",
+                {}
         ),
         (
-            ([], {}, "asdf"),
-            "Cannot add [] to the dict!\nCannot add {} to the dict!\n",
-            {"asdf": 2}
+                ([], {}, "asdf"),
+                "Cannot add [] to the dict!\nCannot add {} to the dict!\n",
+                {"asdf": 2}
         ),
         (
-            ("a", (1, [2, 3]), "b"),
-            "Cannot add (1, [2, 3]) to the dict!\n",
-            {"a": 0, "b": 2}
+                ("a", (1, [2, 3]), "b"),
+                "Cannot add (1, [2, 3]) to the dict!\n",
+                {"a": 0, "b": 2}
         )
     ]
 )
@@ -74,7 +74,6 @@ def test_create_dict_with_function_argument():
 
     assert create_dict_result == {func: 0, 2: 1}
     assert std_output == ""
-
 
 # @pytest.mark.parametrize(
 #     "args,expected_std_output,expected_result",
