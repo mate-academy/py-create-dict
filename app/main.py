@@ -1,22 +1,21 @@
 def create_dict(*args):
     result = {}
-    data_dict = 0
     message = "Cannot add {} to the dict!"
 
-    for i in args:
-        if isinstance(i, (str, int, float, bool)) and \
-                i is not None or callable(i):
-            result.update({i: data_dict})
-        elif isinstance(i, tuple):
+    for index, item in enumerate(args):
+        if isinstance(item, (list, set, dict)):
+            print(message.format(item))
+        elif isinstance(item, tuple):
 
-            for j in i:
+            for j in item:
                 if isinstance(j, (list, set, dict)):
-                    print(message.format(i))
+                    print(message.format(item))
                     break
+
             else:
-                result.update({i: data_dict})
+                result.update({item: index})
+
         else:
-            print(message.format(i))
-        data_dict += 1
+            result.update({item: index})
 
     return result
