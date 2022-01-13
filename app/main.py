@@ -7,7 +7,7 @@ def create_dict(*args):
         if isinstance(argument, (set, list, dict)):
             print(f"Cannot add {argument} to the dict!")
 
-        elif isinstance(argument, (set, list, dict, tuple)):
+        elif isinstance(argument, tuple):
             for i in argument:
                 if isinstance(i, (set, list, set)):
                     print(f"Cannot add {argument} to the dict!")
@@ -18,5 +18,3 @@ def create_dict(*args):
             new_dict[argument] = index
 
     return new_dict
-
-    pass
