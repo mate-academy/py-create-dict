@@ -9,47 +9,23 @@ from app.main import create_dict
 @pytest.mark.parametrize(
     "args,expected_std_output,expected_result",
     [
-        (
-            (7, 1, 3),
-            "",
-            {7: 0, 1: 1, 3: 2}
-        ),
-        (
-            (3, (1, 2), 5),
-            "",
-            {3: 0, (1, 2): 1, 5: 2}
-        ),
-        (
-            (3, [1, 2], 5),
-            "Cannot add [1, 2] to the dict!\n",
-            {3: 0, 5: 2}
-        ),
-        (
-            (3, {1, 2}, 5),
-            "Cannot add {1, 2} to the dict!\n",
-            {3: 0, 5: 2}
-        ),
-        (
-                (3, {1: 1, 2: 2}, 5),
-                "Cannot add {1: 1, 2: 2} to the dict!\n",
-                {3: 0, 5: 2}
-        ),
-        (
-            ({},),
-            "Cannot add {} to the dict!\n",
-            {}
-        ),
+        ((7, 1, 3), "", {7: 0, 1: 1, 3: 2}),
+        ((3, (1, 2), 5), "", {3: 0, (1, 2): 1, 5: 2}),
+        ((3, [1, 2], 5), "Cannot add [1, 2] to the dict!\n", {3: 0, 5: 2}),
+        ((3, {1, 2}, 5), "Cannot add {1, 2} to the dict!\n", {3: 0, 5: 2}),
+        ((3, {1: 1, 2: 2}, 5), "Cannot add {1: 1, 2: 2} to the dict!\n", {3: 0, 5: 2}),
+        (({},), "Cannot add {} to the dict!\n", {}),
         (
             ([], {}, "asdf"),
             "Cannot add [] to the dict!\nCannot add {} to the dict!\n",
-            {"asdf": 2}
+            {"asdf": 2},
         ),
         (
             ("a", (1, [2, 3]), "b"),
             "Cannot add (1, [2, 3]) to the dict!\n",
-            {"a": 0, "b": 2}
-        )
-    ]
+            {"a": 0, "b": 2},
+        ),
+    ],
 )
 def test_create_dict(args: tuple, expected_std_output: str, expected_result: dict):
     f = io.StringIO()
