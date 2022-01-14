@@ -11,5 +11,7 @@ def create_dict(*args):
                     print(f"Cannot add {arg} to the dict!")
                     break
                 else:
-                    dicto[arg] = index
+                    dicto[arg] = i
+        else:
+            dicto[arg] = index
     return dicto
