@@ -19,19 +19,9 @@ It is agreed, that arguments provided to `create_dict` function will be
 only of next types: `int`, `float`, `str`, `bool`, `NoneType`, `list`, `tuple`, `set`, `dict`, `function`.
 
 Also in this task, you should not use `hash` function or `try/except` constructions.
+
 Hint: use `isinstance`.
 
-
-### Required Task
-Create function `create_dict` if:
-
-For all arguments provided to `create_dict` we will have maximum nesting level = 2:
-
-- `create_dict([1, 2, [1, 2]])` - nesting level = 2, because first parameter has list in list - ok.
-- `create_dict([1, 2, 3])` - nesting level = 1 - ok, because list is already has level 1.
-- `create_dict(1)` - nesting level = 0 - ok.
-- `create_dict([1, [2, [3, 4]]])` - nesting level = 3 - not ok, won't be passed such list in function.
-
 Examples:
 ```python
 print(create_dict(7, 1, 3))
@@ -41,29 +31,4 @@ print(create_dict(3, [1, 2], 5))
 # {3: 0, 5: 2}
 print(create_dict(3, (1, 2), 5))
 # {3: 0, (1, 2): 1, 5: 2}
-print(create_dict(3, (1, [2, 3]), 5))
-# Cannot add (1, [2, 3]) to the dict!
-# {3: 0, 5: 2}
-```
-
-
-### Optional Task
-Create function `create_dict` if:
-
-Each collection type provided to the `create_dict` function is not limited to any nesting level.
-
-If you want to solve this Task - go to `tests/test_main.py` file and uncomment the full last test :)
-
-Examples:
-```python
-print(create_dict(7, 1, 3))
-# {7: 0, 1: 1, 3: 2}
-print(create_dict(3, [1, 2], 5))
-# Cannot add [1, 2] to the dict!
-# {3: 0, 5: 2}
-print(create_dict(3, (1, 2), 5))
-# {3: 0, (1, 2): 1, 5: 2}
-print(create_dict(3, (1, (10, (7, [2, 3]))), 5))
-# Cannot add (1, (10, (7, [2, 3]))) to the dict!
-# {3: 0, 5: 2}
 ```
